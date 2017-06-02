@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <table border="1">
+      <tr>
+            <th>编号</th>
+            <th>内容</th>
+            <th>状态</th>
+            <th> 操作</th>
+      </tr>
+
+      <tr>
+          {% for list in todo_list %}
+            <td> list.id </td>
+            <td>  list.name</td>
+            <td>  list.tye</td>
+            <td> <input type="button" value="删除"></td>
+          {% endfor %}
+
+      </tr>
+    </table>
+</body>
+</html>

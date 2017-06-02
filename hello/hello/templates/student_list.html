@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>学生表</title>
+<script>
+
+
+
+
+        function firm(id) {
+
+            if (confirm("是否删除")==true) {
+
+                  window.location.href="/stu_list_delete/?id="+id;
+            }
+            else {
+
+            }
+
+    }
+
+
+
+</script>
+</head>
+<body >
+ <div class="">
+
+        <table width="900"   class="" border="1" align="center" cellspacing="0" rules="all" >
+        <caption  >
+            <tr bgcolor="#f0f8ff" align="center">
+                <th>姓名</th>
+                <th>学号</th>
+                <th>班级</th>
+                <th>年龄</th>
+                <th>年龄</th>
+
+            </tr>
+
+            {% for stu in stu_list  %}
+            <tr bgcolor="#faebd7">
+                <td >{{stu.id }}</td>
+                <td>{{ stu.password }}</td>
+                <td>{{ stu.class }}</td>
+                <td >{{ stu.age }}</td>
+
+                <td class="td_cell">
+                    <button type="button" class="btn btn-default btn-xs" onclick="firm({{ stu.id }})">删除</button>
+                </td>
+            </tr>
+            {% endfor %}
+            </caption>
+        </table>
+    </div>
+
+</body>
+</html>

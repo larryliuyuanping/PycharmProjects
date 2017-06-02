@@ -1,0 +1,76 @@
+<div class="menu">
+{% if menu == "assistant" %}
+
+	    <div>
+		    <a href="/student_assistant/" class="item">
+			    学员列表
+			</a>
+		</div>
+        <div>
+		    <a href="/student_assistant_communication_all/" class="item">
+			    沟通记录
+			</a>
+		</div>
+        <div>
+		    <a href="/student_assistant_suspend_all/" class="item">
+			    休学记录
+			</a>
+		</div>
+
+{% elif menu == "sailer" %}
+        <div>
+            <a href="/student_sailer/" class="item">
+                学员销售情况
+            </a>
+        </div>
+        <div>
+            <a href="/student_sailer/add/" class="item">
+                学员销售录入
+            </a>
+        </div>
+{% elif menu == "person" %}
+        <div>
+								<a href="/user/" class="item">
+								    用户管理
+								</a>
+							</div>
+							<div>
+								<a href="/teacher/" class="item">
+                                    教师管理
+								</a>
+							</div>
+                            <div>
+								<a href="/assistant/" class="item">
+                                    教务管理
+								</a>
+							</div>
+
+{% elif menu == "career" %}
+                            <div>
+								<a href="/career/" class="item">
+								    专业管理
+								</a>
+							</div>
+
+{% elif menu == "document" %}
+                            <div>
+								<a href="/document/" class="item">
+								    文档管理
+								</a>
+							</div>
+                            <div>
+								<a href="/document/add" class="item">
+								    文档添加
+								</a>
+							</div>
+
+{% elif menu == "exercise_type" %}
+                            <div>
+								<a href="/exercise_type/" class="item">
+								    分类管理
+								</a>
+							</div>
+{% else %}
+
+{% endif %}
+</div>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="UTF-8">
+		<title>todolist</title>
+
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .container{
+                width: 900px;
+                height:900px;
+                margin:0 auto ;
+
+            }
+            .content{
+                width: 500px;;
+                height:50px;
+                margin-left: -113px;
+                margin-top: 100px;
+                float:left;
+                text-align:center;
+                font-size:14px;
+                line-height:100%;
+
+            }
+            button{
+                width: 80px;
+                float:right;
+
+            }
+            .td_cell{
+                width: 80px;
+
+            }
+
+            td{
+                text-align: center;
+
+            }
+
+
+        </style>
+
+<script type="text/javascript">
+
+
+
+
+        function dele(id) {
+
+            if (confirm("是否删除")==true) {
+
+                window.location.href="/todo_list_delete/?id="+id;
+
+            }
+            else {
+
+            }
+
+
+        }
+        function add() {
+
+            var con= document.getElementById("content").value;
+            console.log(con)
+            window.location.href="/todo_list_add/?lname="+con;
+
+        }
+
+
+
+</script>
+</head>
+<body >
+    <div class="container">
+        <div class="content">
+            新增任务：<input  id = "content" type="text" value="">
+            <input id="button" class="button" type="button" value="新增"onclick="add()">
+        </div>
+        <div class="table">
+
+            <table width="900"   class="" border="1" align="center" cellspacing="0" rules="all" >
+                <caption  >
+                    <tr bgcolor="#f0f8ff" align="center">
+                        <th>编号</th>
+                        <th>内容</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    {% for list in todo_list  %}
+                    <tr>
+                        <td >{{list.id }}</td>
+                        <td>{{ list.name }}</td>
+                        <td>{{ list.type}}</td>
+                        <td class="td_cell">
+                            <button type="button" class="btn btn-default btn-xs" onclick="dele({{ list.id }})">删除</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </caption>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
